@@ -2,6 +2,13 @@ kind: pipeline
 type: kubernetes
 name: base
 
+node_selector:
+  node-role: drone
+tolerations:
+  - key: dedicated
+    value: drone
+    effect: NoSchedule
+
 steps:
   # 必須変数チェック
   - name: check-vars
