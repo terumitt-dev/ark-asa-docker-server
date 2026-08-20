@@ -22,7 +22,7 @@ steps:
         from_secret: AWS_SECRET_ACCESS_KEY
       ECR_REPO:   # 各リポジトリで上書き必須
     commands:
-      - set -euxo pipefail
+      - set -eux
       - '[ -n "$ECR_REPO" ] || (echo "ECR_REPO is not set" && exit 1)'
       - '[ -n "$AWS_REGION" ] || (echo "AWS_REGION is not set" && exit 1)'
       - '[ -n "$AWS_ACCESS_KEY_ID" ] || (echo "AWS_ACCESS_KEY_ID is not set" && exit 1)'
